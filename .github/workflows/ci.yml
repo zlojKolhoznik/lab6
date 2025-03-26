@@ -16,6 +16,8 @@ jobs:
         python-version: '3.10'
     - name: Install dependencies
       run: pip install -r requirements.txt
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
     - name: Run tests
       run: pytest —junitxml=report.xml
   analysis:
