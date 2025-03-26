@@ -29,9 +29,7 @@ jobs:
       - name: Code Review Check for develop
         uses: actions/github-script@v6
         with:
-          run: npm install @actions/github --save
           script: |
-            const { getOctokit } = require('@actions/github')
             const prNumber = context.payload.pull_request.number;
             const octokit = getOctokit(core.getInput('github_token'));
             const {data: reviews} = await octokit.pulls.listReviews({ 
