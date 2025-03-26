@@ -1,9 +1,4 @@
 import unittest
-import sys
-import os
-
-# Add the src directory to the system path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../src')))
 from src.calculator import Calculator
 
 # filepath: test/test_calculator_tests.py
