@@ -31,7 +31,8 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
-            const {data: reviews} = await github.pulls.listReviews({ 
+            const octokit = github.getOctokit(core.getInput('github_token'));
+            const {data: reviews} = await octokit.pulls.listReviews({ 
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: prNumber
