@@ -20,7 +20,7 @@ jobs:
       run: pytest —junitxml=report.xml
   analysis:
     runs-on: ubuntu-latest
-    needs: test
+    needs: build
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
