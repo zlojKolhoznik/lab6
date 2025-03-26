@@ -30,6 +30,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const { github } = require('@actions/github');
             const prNumber = context.payload.pull_request.number;
             const octokit = github.getOctokit(core.getInput('github_token'));
             const {data: reviews} = await octokit.pulls.listReviews({ 
