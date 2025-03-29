@@ -11,6 +11,7 @@ operations = {
     "div": Calculator.divide
 }
 
+
 def main():
     if len(sys.argv) != 4:
         print("Usage: calc <add|subtract|mult|div> <number1> <number2>")
