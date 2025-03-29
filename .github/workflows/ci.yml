@@ -21,6 +21,7 @@ jobs:
     - name: Run tests
       run: pytest —junitxml=report.xml
   analysis:
+    permissions: write-all
     runs-on: ubuntu-latest
     needs: build
     steps:
